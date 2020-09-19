@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.container--principal{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 20vh repeat(7,30vh) 200px;
+    grid-template-areas: 
+    "nav nav nav nav nav nav nav nav nav nav nav nav"
+     "main main main main main main main main main main main main"
+    "main main main main main main main main main main main main"
+    "main main main main main main main main main main main main"
+    "main main main main main main main main main main main main"
+    "covid covid covid covid covid covid covid covid covid covid covid covid"
+    "covid covid covid covid covid covid covid covid covid covid covid covid"
+    "covid covid covid covid covid covid covid covid covid covid covid covid"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+.header{
+    overflow: hidden;
+    @include size(100%,100%);
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    background-color: #EFB810;
+    &__left{
+        @include size(60%,100%);
+        display: flex;
+        
+        align-items: center;
+    }
+    &__logo{
+        @include size(30%,100%);
+    }
+    &__title{
+        font-size: 1.1em;
+        color: white;
+    }
+    &__rigth{
+        @include size(100%,100%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav{
+        @include size(100%,100%);
+        display: flex;
+        list-style: none;
+    }
+    &__navimg{
+        width: 2.5em;
+        height: 2.5em;
+    }
+    &__item{
+        @include size(20%,100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        list-style: none;
+        position: relative;
+        a{
+            color:whitesmoke;
+            &:hover{
+                color:#c05151;
+                
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 0px;
+            transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.6s;
+            
+        }
+        &:hover::after{
+            transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 1s;
+            height: 20px;
+            color:#c05151;
+            background-color: whitesmoke;
+            
+        }
+    }
+}
